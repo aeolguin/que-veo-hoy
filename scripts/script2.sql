@@ -1,13 +1,20 @@
 
 USE queveohoy;
 
-CREATE TABLE `genero` (
+CREATE TABLE `actor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE pelicula ADD COLUMN genero_id int(11);
-ALTER TABLE pelicula ADD FOREING KEY (genero_id) REFERENCES genero(id);
+CREATE TABLE `actor_pelicula` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `actor_id` int(11),
+  `pelicula_id` int(11),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (pelicula_id) REFERENCES pelicula(id),
+  FOREIGN KEY (actor_id) REFERENCES actor(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
