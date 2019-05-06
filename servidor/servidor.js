@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.get('/peliculas', controlador.listaPeliculas);
 app.get('/generos' , controlador.listaGeneros);
 app.get('/peliculas/recomendacion' , controlador.listaRecomendadas);
+app.get('/peliculas/:id', controlador.listaInfoPelis);
 
 
 //seteamos el puerto en el cual va a escuchar los pedidos la aplicación

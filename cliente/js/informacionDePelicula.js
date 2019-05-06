@@ -10,11 +10,12 @@
 
     function ControladorInformacionDePelicula() {
         this.cargarDetalle = function(data) {
+            console.log(data);
                 var pelicula, actores;
                 
-                pelicula = data.pelicula;
+                pelicula = data.pelicula[0];
                 actores = data.actores;
-                genero = data.pelicula.nombre;
+                genero = data.pelicula[0].nombre;
 
                 $(".imagen").attr("src", pelicula.poster);
                 $(".titulo, title").html(pelicula.titulo + " (" + pelicula.anio + ")");
